@@ -1,0 +1,18 @@
+.container-fluid {
+    gap: 50px;
+}
+
+.custom-search-width {
+    width: 400px;
+}
+
+.custom-btn {
+    background-color: white; /* Fondo blanco por defecto */
+    color: black; /* Texto en negro por defecto */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.custom-btn:hover {
+    background-color: grey; /* Fondo gris cuando se pasa el cursor */
+    color: white; /* Texto blanco cuando se pasa el cursor */
+}

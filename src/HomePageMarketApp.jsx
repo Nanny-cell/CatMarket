@@ -1,9 +1,10 @@
 import React from 'react'
+import { Navbar } from './components/Navbar'
 
 export const HomePageMarketApp = () => {
   return (
     <>
-    <h1>Hola</h1>
+        <Navbar />
     </>
   )
 }
