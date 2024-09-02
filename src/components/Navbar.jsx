@@ -1,15 +1,22 @@
 import React from 'react'
 import logo from '../img/icon.png'
+import { NavLink } from 'react-router-dom'
 
 export const Navbar = () => {
     return (
         <>
             <nav className="navbar navbar-expand-lg ">
                 <div className="container-fluid justify-content-center">
-                    <a href="#" className="navbar-brand">
-                        <img src={logo} width="100" />
-                    </a>
-                    <a className="navbar-brand" href="#">CatMarket</a>
+                    <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                    >
+                        <span href="#" className="navbar-brand">
+                            <img src={logo} width="100" />
+                        </span>
+                    </NavLink>
+                    <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                    >
+                        <span className="navbar-brand" href="#">CatMarket</span>
+                    </NavLink>
 
                     <form className="d-flex ">
                         <div className="input-group border rounded-pill custom-search-width">
@@ -21,8 +28,10 @@ export const Navbar = () => {
                             <input className="form-control bg-transparent border-0 rounded-pill" type="search" placeholder="Search" aria-label="Search" />
                         </div>
                     </form>
-
-                    <button type="button" className="btn custom-btn border-0">Ofertas</button>
+                    <NavLink to="/listadoItem" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                    >
+                        <button type="button" className="btn custom-btn border-0">Ofertas</button>
+                    </NavLink>
                     <button type="button" className="btn custom-btn border-0">Mi Carrito</button>
 
                     <button type='button' className='btn custom-btn' >

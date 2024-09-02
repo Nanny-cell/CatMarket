@@ -1,10 +1,12 @@
-import { StrictMode } from 'react'
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import { HomePageMarketApp } from './HomePageMarketApp'
+import { Inicio } from './Inicio';
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <HomePageMarketApp />
-  </StrictMode>
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <BrowserRouter>
+    <Inicio />
+  </BrowserRouter>
 )
