@@ -28,10 +28,7 @@ export const Navbar = () => {
                             <input className="form-control bg-transparent border-0 rounded-pill" type="search" placeholder="Search" aria-label="Search" />
                         </div>
                     </form>
-                    <NavLink to="/listadoItem" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-                    >
-                        <button type="button" className="btn custom-btn border-0">Ofertas</button>
-                    </NavLink>
+                    <button type="button" className="btn custom-btn border-0">Ofertas</button>
                     <button type="button" className="btn custom-btn border-0">Mi Carrito</button>
 
                     <button type='button' className='btn custom-btn' >

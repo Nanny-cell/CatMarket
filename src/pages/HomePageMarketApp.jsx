@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Carrusel, SubItem, SeccionOfertas } from '../components';
+import { Carrusel, SubItem, SeccionOfertas } from '../components';
 
 export const HomePageMarketApp = () => {
   return (

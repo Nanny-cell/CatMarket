@@ -54,3 +54,36 @@
 .imgOfertas img {
     border-radius: 6px;
 }
+
+.container2 {
+    display: grid;
+    grid-template-columns: 0.5fr 2.5fr; /* La columna izquierda será más delgada */
+    height: 100vh; /* Altura completa de la pantalla */
+    gap: 1rem; /* Espacio entre las columnas */
+}
+
+.left-side {
+    background-color: #f0f0f0; /* Color de fondo para distinguir */
+    padding: 1rem;
+}
+
+.right-side {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr); /* Tres filas para la zona derecha */
+    gap: 1rem; /* Espacio entre las filas */
+}
+
+.row-right {
+    display: flex;
+    justify-content: space-between; /* Distribuir los divs uniformemente */
+    align-items: center; /* Alineación vertical centrada */
+}
+
+.row-right > div {
+    padding: 1rem;
+    flex: 1; /* Cada div ocupará el mismo espacio */
+    margin: 0 0.5rem; /* Espaciado entre los divs */
+    border: 1px solid black; /* Borde negro alrededor del div */
+    background-color: transparent; /* Fondo transparente */
+    border-radius: 10px;
+}
