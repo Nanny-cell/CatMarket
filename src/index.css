@@ -60,10 +60,12 @@
     grid-template-columns: 0.5fr 2.5fr; /* La columna izquierda será más delgada */
     height: 100vh; /* Altura completa de la pantalla */
     gap: 1rem; /* Espacio entre las columnas */
+    margin-left: 11%;
+    margin-right: 11%;
+    margin-top: 2%;
 }
 
 .left-side {
-    background-color: #f0f0f0; /* Color de fondo para distinguir */
     padding: 1rem;
 }
 
