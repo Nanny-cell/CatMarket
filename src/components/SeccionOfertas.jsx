@@ -9,12 +9,12 @@ export const SeccionOfertas = () => {
             <div className="container">
                 <div className="grupoOfertas row align-items-stretch">
                     <div className="ofertas col-6">
-                        <img src={aseoSeccionOfertas} alt="Aseo Seccion Ofertas" />
+                        <img src={aseoSeccionOfertas} alt="Aseo Seccion Ofertas" className="img-opacity" />
                     </div>
                     <div className="col-6">
                         <div className="imgOfertas right-images">
-                            <img src={mascotaSeccionOfertas} alt="Mascota Seccion Ofertas" />
-                            <img src={herramientasSeccionOfertas} alt="Herramientas Seccion Ofertas" />
+                            <img src={mascotaSeccionOfertas} alt="Mascota Seccion Ofertas" className="img-opacity" />
+                            <img src={herramientasSeccionOfertas} alt="Herramientas Seccion Ofertas" className="img-opacity" />
                         </div>
                     </div>
                 </div>

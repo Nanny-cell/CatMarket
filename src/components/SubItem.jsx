@@ -13,36 +13,50 @@ export const SubItem = () => {
             <div className="container text-center">
                 <div className="row row-cols-5">
                     <div className="col-sm">
-                    <NavLink to="/listadoItem" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-                    >
-                        <button type="button" className="btn custom-btn border-0">
-                            <img src={iconLimpieza} width="100" />
-                        </button>
-                    </NavLink>
+                        <NavLink to="/listadoItem" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                        >
+                            <button type="button" className="btn custom-btn border-0">
+                                <img src={iconLimpieza} width="100" />
+                            </button>
+                        </NavLink>
                         <p>Limpieza</p>
                     </div>
                     <div className="col-sm">
-                        <button type="button" className="btn custom-btn border-0">
-                            <img src={iconAlcohol} width="100" />
-                        </button>
+                        <NavLink to="/listadoItem" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                        >
+                            <button type="button" className="btn custom-btn border-0">
+                                <img src={iconAlcohol} width="100" />
+
+                            </button>
+                        </NavLink>
                         <p>Alcohol</p>
                     </div>
                     <div className="col-sm">
-                        <button type="button" className="btn custom-btn border-0">
-                            <img src={iconFrutaVerdura} width="100" />
-                        </button>
+                        <NavLink to="/listadoItem" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                        >
+                            <button type="button" className="btn custom-btn border-0">
+                                <img src={iconFrutaVerdura} width="100" />
+                            </button>
+                        </NavLink>
                         <p>Fruta y Verduras</p>
                     </div>
                     <div className="col-sm">
-                        <button type="button" className="btn custom-btn border-0">
-                            <img src={iconBebe} width="100" />
-                        </button>
+                        <NavLink to="/listadoItem" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                        >
+                            <button type="button" className="btn custom-btn border-0">
+                                <img src={iconBebe} width="100" />
+
+                            </button>
+                        </NavLink>
                         <p>Bebe</p>
                     </div>
                     <div className="col-sm">
-                        <button type="button" className="btn custom-btn border-0">
-                            <img src={iconCarnes} width="100" />
-                        </button>
+                        <NavLink to="/listadoItem" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                        >
+                            <button type="button" className="btn custom-btn border-0">
+                                <img src={iconCarnes} width="100" />
+                            </button>
+                        </NavLink>
                         <p>Carnes</p>
                     </div>
                 </div>
