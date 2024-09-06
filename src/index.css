@@ -59,7 +59,6 @@
 }
 
 
-
 /**CSS ListItemPage*/
 .container2 {
     display: grid;
@@ -73,25 +72,4 @@
 
 .left-side {
     padding: 1rem;
-}
-
-.right-side {
-    display: grid;
-    grid-template-rows: repeat(3, 1fr); /* Tres filas para la zona derecha */
-    gap: 1rem; /* Espacio entre las filas */
-}
-
-.row-right {
-    display: flex;
-    justify-content: space-between; /* Distribuir los divs uniformemente */
-    align-items: center; /* Alineación vertical centrada */
-}
-
-.row-right > div {
-    padding: 1rem;
-    flex: 1; /* Cada div ocupará el mismo espacio */
-    margin: 0 0.5rem; /* Espaciado entre los divs */
-    border: 1px solid black; /* Borde negro alrededor del div */
-    background-color: transparent; /* Fondo transparente */
-    border-radius: 10px;
 }
