@@ -1,5 +1,5 @@
 import React from 'react'
-import aseoSeccionOfertas from '../img/aseoSeccionOfertas.png';
+import congelados from '../img/congelados.png';
 import mascotaSeccionOfertas from '../img/mascotaSeccionOfertas.png';
 import herramientasSeccionOfertas from '../img/herramientasSeccionOfertas.png';
 
@@ -9,7 +9,7 @@ export const SeccionOfertas = () => {
             <div className="container">
                 <div className="grupoOfertas row align-items-stretch">
                     <div className="ofertas col-6">
-                        <img src={aseoSeccionOfertas} alt="Aseo Seccion Ofertas" className="img-opacity" />
+                        <img src={congelados} alt="Aseo Seccion Ofertas" className="img-opacity" />
                     </div>
                     <div className="col-6">
                         <div className="imgOfertas right-images">

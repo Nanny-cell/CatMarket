@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import confort from '../img/confortListItem.png';
 import { getProductos } from '../services/productService';
 
 export const ListadoItems = () => {
@@ -9,7 +8,7 @@ export const ListadoItems = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             const productos = await getProductos();
-            console.log(productos)
+            console.log(productos.productos);
             setProducts(productos.productos);
         };
 
@@ -21,11 +20,12 @@ export const ListadoItems = () => {
             <div className="container">
                 <div className="row">
                     {products.map(p => (
-                        <div className="col-4 my-2" key={p.id}>
+                        <div className="col-4 my-2"  key={p._id}>
                             <div className="card">
-                                <img src={confort} className="card-img-top" alt="..." />
+                            <img src={p.imagen} alt={p.nombre} style={{ width: '200px', height: 'auto' }} />
                                 <div className="card-body">
-                                    <h5 className="card-title mb-3">{p.name}</h5>
+                                    <h4 className="card-title mb-3">{p.marca.nombre}</h4>
+                                    <h5 className="card-title mb-3">{p.nombre}</h5>
                                     <p>{p.medida}</p>
                                 </div>
                                 <div className="card-body d-flex justify-content-between text-danger">
