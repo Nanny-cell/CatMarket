@@ -20,7 +20,10 @@ export const createUser = async (body) => {
     try {
         const response = await fetch('http://localhost:5000/api/auth/new', {
             method: 'POST',
-            body: JSON.stringify(body)
+            body: JSON.stringify(body),
+            headers: {
+                'Content-Type': 'application/json', // Esta cabecera es importante
+            },
         });
         const data = await response.json();
         return data;
