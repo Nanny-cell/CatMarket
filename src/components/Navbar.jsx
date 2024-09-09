@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import { Login } from '../modal/Login'
 import { MiCarrito } from '../modal/MiCarrito'
 
-export const Navbar = ({setUser, user}) => {
+export const Navbar = ({ setUser, user }) => {
     return (
         <>
             <nav className="navbar navbar-expand-lg ">
@@ -31,7 +31,7 @@ export const Navbar = ({setUser, user}) => {
                         </div>
                     </form>
                     <button type="button" className="btn custom-btn border-0">Ofertas</button>
-                    <button type="button" className="btn custom-btn border-0">Mi Carrito</button>
+                    <button type="button" className="btn custom-btn border-0" data-bs-toggle="modal" data-bs-target="#miCarritoModal">Mi Carrito</button>
                     <MiCarrito />
 
                     <button type='button' className='btn custom-btn' data-bs-target="#exampleModalToggle" data-bs-toggle="modal" >

@@ -73,3 +73,21 @@
 .left-side {
     padding: 1rem;
 }
+
+
+
+/** Modal Carrito */
+.modal-dialog-right {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 40%; /* ajustar el ancho del modal */
+    margin: 0;
+    max-width: 100%;
+  }
+  
+  .modal-content {
+    height: 100%; /* Hace que el modal ocupe toda la altura de la pantalla */
+    border-radius: 0; /* Elimina el borde redondeado */
+  }
