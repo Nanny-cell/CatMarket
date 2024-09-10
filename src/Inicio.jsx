@@ -6,11 +6,9 @@ import { HomePageMarketApp } from './pages/HomePageMarketApp';
 
 export const Inicio = () => {
 
-    const [user, setUser] = useState([]);
-
     return (
         <>
-            <Navbar setUser ={setUser} user={user} />
+            <Navbar />
 
             <Routes>
                 <Route path='/' element={<HomePageMarketApp />} />

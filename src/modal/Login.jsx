@@ -2,14 +2,15 @@ import React, { useRef, useState } from 'react';
 import { login } from '../services/authService';
 import { CrearUsuario } from '../modal/CrearUsuario';
 
-export const Login =  ({ setUser }) => {
+export const Login =  ({handler}) => {
+
     const [email, setEmail] = useState('');
     const [contrasenia, setContrasenia] = useState('');
     const [error, setError] = useState(false);
 
     const modalRef = useRef(null);
 
-    const handleSubmit = async ( e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (email === '' || contrasenia === '') {
             console.log("Error: Campos vacíos");
@@ -21,9 +22,9 @@ export const Login =  ({ setUser }) => {
             password:contrasenia
         } 
         const data = await login(payload);
+        handler(data.name)
+        console.log(data);
         setError(false);
-        setUser([email]);
-
 
         // Cerrar el modal después de un inicio de sesión exitoso
         if (modalRef.current) {
