@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { getProductos } from '../services/productService';
 
-export const ListadoItems = () => {
+export const ListadoItems = ({handlerAddProductCart}) => {
 
     const [products, setProducts] = useState([]);
+
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -20,7 +21,7 @@ export const ListadoItems = () => {
             <div className="container">
                 <div className="row">
                     {products.map(p => (
-                        <div className="col-4 my-2"  key={p._id}>
+                        <div className="col-4 my-2"  key={p.id}>
                             <div className="card">
                             <img src={p.imagen} alt={p.nombre} style={{ width: '200px', height: 'auto' }} />
                                 <div className="card-body">
@@ -29,7 +30,7 @@ export const ListadoItems = () => {
                                     <p>{p.medida}</p>
                                 </div>
                                 <div className="card-body d-flex justify-content-between text-danger">
-                                    <button className="btn btn-danger">Agregar</button>
+                                    <button className="btn btn-danger" onClick={() => handlerAddProductCart(p)}>Agregar</button>
                                     <span>${p.precio}</span>
                                 </div>
                             </div>

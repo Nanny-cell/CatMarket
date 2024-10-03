@@ -3,7 +3,7 @@ import logo from '../img/icon.png';
 import { NavLink } from 'react-router-dom';
 import { Login, MiCarrito } from '../modal';
 
-export const Navbar = () => {
+export const Navbar = ({ cartItems }) => {
 
     const [user, setUser] = useState();
 
@@ -37,8 +37,8 @@ export const Navbar = () => {
                         </div>
                     </form>
                     <button type="button" className="btn custom-btn border-0">Ofertas</button>
-                    <button type="button" className="btn custom-btn border-0" data-bs-toggle="modal" data-bs-target="#miCarritoModal">Mi Carrito</button>
-                    <MiCarrito />
+                    <button type="button" className="btn custom-btn border-0" data-bs-toggle="modal" data-bs-target="#miCarritoModal">Mi Carrito ({cartItems.length}) </button>
+                    <MiCarrito cartItems={cartItems} />
 
                     <button type='button' className='btn custom-btn' data-bs-target="#exampleModalToggle" data-bs-toggle="modal" >
                         <a className="navbar-brand" href="#">{ user ? 'Hola ' + user : 'Iniciar sesion'}</a>

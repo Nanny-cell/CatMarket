@@ -1,12 +1,12 @@
 import React from 'react'
 import { FiltrosListItem, ListadoItems } from '../components';
 
-export const ListadoProductos = () => {
+export const ListadoProductos = ({handlerAddProductCart}) => {
     return (
         <>
             <div className="container2">
                 <FiltrosListItem />
-                <ListadoItems />
+                <ListadoItems handlerAddProductCart={handlerAddProductCart} />
             </div>
         </>
     )
