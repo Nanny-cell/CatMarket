@@ -4,6 +4,8 @@ const initialCartItems = [];
 
 export const MiCarrito = ({ cartItems }) => {
 
+  const total = cartItems.reduce((acc, item) => acc + item.precio * item.quantity, 0);
+
   return (
     <div
       className="modal fade"
@@ -37,11 +39,16 @@ export const MiCarrito = ({ cartItems }) => {
                   <tr key={item.id}>
                     <td>{item.nombre}</td>
                     {/* Multiplica el precio por la cantidad */}
-                    <td>{item.precio * item.quantity}</td>
+                    <td>${item.precio * item.quantity}</td>
                     <td>{item.quantity}</td>
                   </tr>
                 ))}
+                <tr>
+                  <td colSpan="2" >Total:</td>
+                  <td>${total}</td>
+                </tr>
               </tbody>
+
             </table>
           </div>
         </div>
