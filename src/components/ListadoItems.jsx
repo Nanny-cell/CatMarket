@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getProductos } from '../services/productService';
 
-export const ListadoItems = ({handlerAddProductCart}) => {
+export const ListadoItems = ({handlerAddProductCart, selectedBrands }) => {
 
     const [products, setProducts] = useState([]);
 
@@ -16,11 +16,16 @@ export const ListadoItems = ({handlerAddProductCart}) => {
         fetchProducts();
     }, []);
 
+        // Filtrar productos según las marcas seleccionadas
+        const filteredProducts = products.filter(product =>
+            selectedBrands.length === 0 || selectedBrands.includes(product.marca.nombre)
+        );
+
     return (
         <>
             <div className="container">
                 <div className="row">
-                    {products.map(p => (
+                    {filteredProducts.map(p => (
                         <div className="col-4 my-2"  key={p.id}>
                             <div className="card">
                             <img src={p.imagen} alt={p.nombre} style={{ width: '200px', height: 'auto' }} />
