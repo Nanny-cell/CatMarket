@@ -34,6 +34,11 @@ export const FiltrosListItem = () => {
                     <label className="form-check-label" htmlFor="flexCheckDefault">
                         Lysoform
                     </label>
+                </div><div className="form-check mb-3">
+                    <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                    <label className="form-check-label" htmlFor="flexCheckDefault">
+                        Nubelin
+                    </label>
                 </div>
             </div>
         </>

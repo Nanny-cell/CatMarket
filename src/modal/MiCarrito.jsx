@@ -33,10 +33,11 @@ export const MiCarrito = ({ cartItems }) => {
                 </tr>
               </thead>
               <tbody>
-              {cartItems.map(item => (
+                {cartItems.map(item => (
                   <tr key={item.id}>
                     <td>{item.nombre}</td>
-                    <td>{item.precio}</td>
+                    {/* Multiplica el precio por la cantidad */}
+                    <td>{item.precio * item.quantity}</td>
                     <td>{item.quantity}</td>
                   </tr>
                 ))}
