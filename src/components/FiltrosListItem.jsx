@@ -9,9 +9,9 @@ export const FiltrosListItem = ({ handleBrandChange }) => {
             <div className="left-side">
                 <h3>Marca</h3>
                 {brands.map((brand) => (
-                    <div className="form-check mb-3" key={brand}>
+                    <div className="form-check mb-3 " key={brand}>
                         <input
-                            className="form-check-input"
+                            className="form-check-input "
                             type="checkbox"
                             value={brand}
                             id={`flexCheck-${brand}`}

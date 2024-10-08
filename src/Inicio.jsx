@@ -10,10 +10,10 @@ export const Inicio = () => {
 
     const handlerAddProductCart = (product) => {
         setCartItems((prevItems) => {
-            const itemExists = prevItems.find(item => item.id === product.id);
+            const itemExists = prevItems.find(item => item._id === product._id);
             if (itemExists) {
                 return prevItems.map(item =>
-                    item.id === product.id
+                    item._id === product._id
                         ? { ...item, quantity: item.quantity + 1 }
                         : item
                 );

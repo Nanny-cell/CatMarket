@@ -23,12 +23,12 @@ export const ListadoItems = ({handlerAddProductCart, selectedBrands }) => {
 
     return (
         <>
-            <div className="container">
-                <div className="row">
+            <div className="container ">
+                <div className="row ">
                     {filteredProducts.map(p => (
-                        <div className="col-4 my-2"  key={p.id}>
+                        <div className="col-md-4 mb-4" key={p._id}>
                             <div className="card">
-                            <img src={p.imagen} alt={p.nombre} style={{ width: '200px', height: 'auto' }} />
+                            <img src={p.imagen} alt={p.nombre} className="card-img-top w-100 h-100" />
                                 <div className="card-body">
                                     <h4 className="card-title mb-3">{p.marca.nombre}</h4>
                                     <h5 className="card-title mb-3">{p.nombre}</h5>
