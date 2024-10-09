@@ -16,10 +16,10 @@ export const ListadoItems = ({handlerAddProductCart, selectedBrands }) => {
         fetchProducts();
     }, []);
 
-        // Filtrar productos según las marcas seleccionadas
-        const filteredProducts = products.filter(product =>
+    // Filtrar productos según las marcas seleccionadas
+    const filteredProducts = products.filter(product =>
             selectedBrands.length === 0 || selectedBrands.includes(product.marca.nombre)
-        );
+    );
 
     return (
         <>

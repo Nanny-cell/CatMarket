@@ -58,23 +58,9 @@
     opacity: 0.7; /* Ajusta este valor según el nivel de opacidad que desees */
 }
 
-
-/**CSS ListItemPage*/
-.container2 {
-    display: grid;
-    grid-template-columns: 0.5fr 2.5fr; /* La columna izquierda será más delgada */
-    height: 100vh; /* Altura completa de la pantalla */
-    gap: 1rem; /* Espacio entre las columnas */
-    margin-left: 11%;
-    margin-right: 11%;
-    margin-top: 2%;
-}
-
 .left-side {
     padding: 1rem;
 }
-
-
 
 /** Modal Carrito */
 .modal-dialog-right {
