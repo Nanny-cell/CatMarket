@@ -16,17 +16,15 @@ export const ListadoProductos = ({ handlerAddProductCart }) => {
     };
 
     return (
-        <>
-            <div className="container">
-                <div className="row ">
-                    <div className="col md-2">
-                        <FiltrosListItem handleBrandChange={handleBrandChange} />
-                    </div>
-                    <div className="col md-10">
-                        <ListadoItems handlerAddProductCart={handlerAddProductCart} selectedBrands={selectedBrands} />
-                    </div>
+        <div className="container">
+            <div className="row">
+                <div className="col-md-2 col-lg-2">
+                    <FiltrosListItem handleBrandChange={handleBrandChange} />
+                </div>
+                <div className="col-md-10 col-lg-10">
+                    <ListadoItems handlerAddProductCart={handlerAddProductCart} selectedBrands={selectedBrands} />
                 </div>
             </div>
-        </>
+        </div>
     )
 }
