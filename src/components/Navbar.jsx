@@ -37,7 +37,7 @@ export const Navbar = ({ cartItems }) => {
                         </div>
                     </form>
                     <button type="button" className="btn custom-btn border-0">Ofertas</button>
-                    <button type="button" className="btn custom-btn border-0" data-bs-toggle="modal" data-bs-target="#miCarritoModal">Mi Carrito ({cartItems.length}) </button>
+                    <button type="button" className="btn custom-btn border-0" data-bs-toggle="modal" data-bs-target="#miCarritoModal">Mi Carrito ({cartItems.reduce((total, item) => total + item.quantity, 0)}) </button>
                     <MiCarrito cartItems={cartItems} />
 
                     <button type='button' className='btn custom-btn' data-bs-target="#exampleModalToggle" data-bs-toggle="modal" >
