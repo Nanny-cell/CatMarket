@@ -1,9 +1,27 @@
 import React, { useEffect, useState } from 'react';
 
-const initialCartItems = [];
-
 export const MiCarrito = ({ cartItems }) => {
 
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    setItems(cartItems);
+  }, [cartItems]);
+
+  const incrementQuantity = (id) => {
+    const updatedItems = items.map(item => 
+      item._id === id ? { ...item, quantity: item.quantity + 1 } : item
+    );
+    setItems(updatedItems);
+  };
+
+  const decrementQuantity = (id) => {
+    const updatedItems = items.map(item => 
+      item._id === id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
+    );
+    setItems(updatedItems);
+  };
+  
   const total = cartItems.reduce((acc, item) => acc + item.precio * item.quantity, 0);
 
   return (
@@ -17,9 +35,9 @@ export const MiCarrito = ({ cartItems }) => {
       <div className="modal-dialog modal-dialog-right">
         <div className="modal-content">
           <div className="modal-header">
-            <h1 className="modal-title fs-5" id="miCarritoModalLabel">
+          <h1 className="modal-title fs-5" id="miCarritoModalLabel">
               Tu Carrito (
-              {cartItems.reduce((total, item) => total + item.quantity, 0)}
+              {items.reduce((total, item) => total + item.quantity, 0)}
               )
             </h1>
             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close">
@@ -38,7 +56,7 @@ export const MiCarrito = ({ cartItems }) => {
                 </tr>
               </thead>
               <tbody>
-                {cartItems.map(item => (
+                {items.map(item => (
                   <tr key={item._id}>
                     <td><img src={item.imagen} alt="50" style={{ width: '30px', height: '30px' }} /></td>
                     <td>{item.nombre} {item.marca.nombre} </td>
@@ -46,9 +64,9 @@ export const MiCarrito = ({ cartItems }) => {
                     <td>${item.precio * item.quantity}</td>
                     <td>
                       <div className="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" className="btn btn-secondary" >-</button>
+                        <button type="button" className="btn btn-secondary" onClick={() => decrementQuantity(item._id)}>-</button>
                         <button type="button" className="btn btn-secondary">{item.quantity}</button>
-                        <button type="button" className="btn btn-secondary">+</button>
+                        <button type="button" className="btn btn-secondary" onClick={() => incrementQuantity(item._id)}>+</button>
                       </div>
                     </td>
                   </tr>
