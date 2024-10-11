@@ -22,7 +22,7 @@ export const MiCarrito = ({ cartItems }) => {
     setItems(updatedItems);
   };
   
-  const total = cartItems.reduce((acc, item) => acc + item.precio * item.quantity, 0);
+  const total = items.reduce((acc, item) => acc + item.precio * item.quantity, 0);
 
   return (
     <div
