@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 
 export const MiCarrito = ({ cartItems, handleCountProducts, countItems, setCartItems }) => {
 
@@ -35,6 +36,14 @@ export const MiCarrito = ({ cartItems, handleCountProducts, countItems, setCartI
 
   const total = items.reduce((acc, item) => acc + item.precio * item.quantity, 0);
 
+  const handlePayClick = () => {
+    Swal.fire({
+      title: "¡Buen trabajo!",
+      text: "¡Pago realizado exitosamenrte!",
+      icon: "success",
+      confirmButtonText: "Continuar"
+    });
+  };
 
   return (
     <div
@@ -84,6 +93,9 @@ export const MiCarrito = ({ cartItems, handleCountProducts, countItems, setCartI
                 <tr>
                   <td colSpan="2" >Total:</td>
                   <td>${total}</td>
+                  <td>
+                    <button className="btn btn-dark" onClick={handlePayClick}>Ir a pagar</button>
+                  </td>
                 </tr>
               </tbody>
             </table>
