@@ -24,15 +24,17 @@ export const Inicio = () => {
     };
 
     return (
-        <>
-            <Navbar cartItems={cartItems} />
+        <div className="container">
+            <div className="row">
+                <Navbar cartItems={cartItems} />
+            </div>
+            <div className="row">
+                <Routes>
+                    <Route path='/' element={<HomePageMarketApp />} />
+                    <Route path='/listadoItem' element={<ListadoProductos handlerAddProductCart={handlerAddProductCart} />} />
 
-            <Routes>
-                <Route path='/' element={<HomePageMarketApp />} />
-                <Route path='/listadoItem' element={<ListadoProductos handlerAddProductCart={handlerAddProductCart} />} />
-
-            </Routes>
-
-        </>
+                </Routes>
+            </div>
+        </div>
     );
 };
