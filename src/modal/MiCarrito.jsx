@@ -9,19 +9,23 @@ export const MiCarrito = ({ cartItems }) => {
   }, [cartItems]);
 
   const incrementQuantity = (id) => {
-    const updatedItems = items.map(item => 
+    const updatedItems = items.map(item =>
       item._id === id ? { ...item, quantity: item.quantity + 1 } : item
     );
     setItems(updatedItems);
   };
 
   const decrementQuantity = (id) => {
-    const updatedItems = items.map(item => 
-      item._id === id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
-    );
+    const updatedItems = items
+      .map(item =>
+        item._id === id && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+      .filter(item => !(item._id === id && item.quantity === 1)); // Elimina si cantidad es 1
+
     setItems(updatedItems);
   };
-  
   const total = items.reduce((acc, item) => acc + item.precio * item.quantity, 0);
 
   return (
@@ -35,7 +39,7 @@ export const MiCarrito = ({ cartItems }) => {
       <div className="modal-dialog modal-dialog-right">
         <div className="modal-content">
           <div className="modal-header">
-          <h1 className="modal-title fs-5" id="miCarritoModalLabel">
+            <h1 className="modal-title fs-5" id="miCarritoModalLabel">
               Tu Carrito (
               {items.reduce((total, item) => total + item.quantity, 0)}
               )
