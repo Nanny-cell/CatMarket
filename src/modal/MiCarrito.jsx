@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export const MiCarrito = ({ cartItems }) => {
+export const MiCarrito = ({ cartItems, handleCountProducts, countItems, setCartItems }) => {
 
   const [items, setItems] = useState([]);
 
@@ -9,24 +9,32 @@ export const MiCarrito = ({ cartItems }) => {
   }, [cartItems]);
 
   const incrementQuantity = (id) => {
+    // Actualiza los items locales
     const updatedItems = items.map(item =>
       item._id === id ? { ...item, quantity: item.quantity + 1 } : item
     );
-    setItems(updatedItems);
+
+    setItems(updatedItems); // Actualiza el estado local
+    setCartItems(updatedItems); // Actualiza el carrito en Inicio
+    handleCountProducts(updatedItems); // Actualiza el contador
   };
 
   const decrementQuantity = (id) => {
     const updatedItems = items
       .map(item =>
-        item._id === id && item.quantity > 1
+        item._id === id
           ? { ...item, quantity: item.quantity - 1 }
           : item
       )
-      .filter(item => !(item._id === id && item.quantity === 1)); // Elimina si cantidad es 1
+      .filter(item => item.quantity > 0); // Elimina si cantidad es 0
 
-    setItems(updatedItems);
+    setItems(updatedItems); // Actualiza el estado local
+    setCartItems(updatedItems); // Actualiza el carrito en Inicio
+    handleCountProducts(updatedItems); // Actualiza el contador
   };
+
   const total = items.reduce((acc, item) => acc + item.precio * item.quantity, 0);
+
 
   return (
     <div
@@ -40,9 +48,7 @@ export const MiCarrito = ({ cartItems }) => {
         <div className="modal-content">
           <div className="modal-header">
             <h1 className="modal-title fs-5" id="miCarritoModalLabel">
-              Tu Carrito (
-              {items.reduce((total, item) => total + item.quantity, 0)}
-              )
+              Tu Carrito ({countItems})
             </h1>
             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close">
 

@@ -3,7 +3,7 @@ import logo from '../img/icon.png';
 import { NavLink } from 'react-router-dom';
 import { Login, MiCarrito } from '../modal';
 
-export const Navbar = ({ cartItems }) => {
+export const Navbar = ({ cartItems, countItems, handleCountProducts, setCartItems }) => {
 
     const [user, setUser] = useState();
 
@@ -27,23 +27,23 @@ export const Navbar = ({ cartItems }) => {
                             <NavLink className="nav-link active" aria-current="page" to="/">Ofertas</NavLink>
                         </li>
                         <li className="nav-item me-5">
-<NavLink
+                            <NavLink
                                 className="nav-link active"
                                 aria-current="page"
                                 to=""
                                 data-bs-toggle="modal"
                                 data-bs-target="#miCarritoModal"
                             >
-                                Mi Carrito ({cartItems.reduce((total, item) => total + item.quantity, 0)})
+                                Mi Carrito ({countItems})
                             </NavLink>
-                            <MiCarrito cartItems={cartItems} />
+                            <MiCarrito cartItems={cartItems} handleCountProducts={handleCountProducts} countItems={countItems} setCartItems={setCartItems} />
                         </li>
                         <li className="nav-item me-5">
                             <NavLink
                                 className="nav-link active"
                                 aria-current="page"
                                 to=""
-                                data-bs-target="#exampleModalToggle" 
+                                data-bs-target="#exampleModalToggle"
                                 data-bs-toggle="modal"
                             >
                                 {user ? 'Hola ' + user : 'Iniciar sesion'}
