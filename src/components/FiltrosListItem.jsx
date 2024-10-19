@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { getMarcasByTipo } from '../services/productService';
 
 export const FiltrosListItem = ({ handleBrandChange }) => {
 
-    const brands = ['Clorox', 'Virginia', 'Quix', 'Cif', 'Lysoform', 'Nubelin', 'Confort'];
-    //brandMenu
+    const [marcas, setMarcas] = useState([]);
+
+    useEffect(() => {
+        const fetchMarcas = async () => {
+            const marcas = await getMarcasByTipo("Limpieza");
+            setMarcas(marcas);
+        };
+
+        fetchMarcas();
+    }, []);
+
+    
     return (
         <nav className="navbar navbar-expand-md">
             <div className='container-fluid'>
@@ -13,7 +24,7 @@ export const FiltrosListItem = ({ handleBrandChange }) => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul className="list-group">
-                        {brands.map((brand) => (
+                        {marcas.map((brand) => (
                             <li className="list-group-item nav-item" key={brand}>
                                 <div className="form-check mb-3">
                                     <input
