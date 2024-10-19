@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { getProductos } from '../services/productService';
+import { useLocation } from 'react-router-dom';
 
 export const ListadoItems = ({handlerAddProductCart, selectedBrands }) => {
-
+    const location = useLocation();
     const [products, setProducts] = useState([]);
 
+    const queryParams = new URLSearchParams(location.search);
+    const tipoProducto = queryParams.get('tipoProducto');
 
     useEffect(() => {
         const fetchProducts = async () => {
-            const productos = await getProductos();
-            console.log(productos.productos);
+            const productos = await getProductos(tipoProducto);
             setProducts(productos.productos);
         };
 
@@ -18,7 +20,7 @@ export const ListadoItems = ({handlerAddProductCart, selectedBrands }) => {
 
     // Filtrar productos según las marcas seleccionadas
     const filteredProducts = products.filter(product =>
-            selectedBrands.length === 0 || selectedBrands.includes(product.marca.nombre)
+        selectedBrands.length === 0 || selectedBrands.includes(product.marca.nombre)
     );
 
     return (

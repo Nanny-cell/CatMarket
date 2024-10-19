@@ -38,11 +38,14 @@ export const MiCarrito = ({ cartItems, handleCountProducts, countItems, setCartI
 
   const handlePayClick = () => {
     Swal.fire({
-      title: "¡Buen trabajo!",
-      text: "¡Pago realizado exitosamenrte!",
-      icon: "success",
-      confirmButtonText: "Continuar"
+      title: (items.length > 0) ? "¡Buen trabajo!" : "Ops!",
+      text: (items.length > 0) ? "¡Pago realizado exitosamenrte!"  : "Tu carrito esta vacio!",
+      icon: (items.length > 0) ? "success"  : "warning",
+      confirmButtonText: "Continuar" 
     });
+    setItems([]); // Actualiza el estado local
+    setCartItems([]); // Actualiza el carrito en Inicio
+    handleCountProducts([]); // Actualiza el contador
   };
 
   return (
@@ -94,7 +97,7 @@ export const MiCarrito = ({ cartItems, handleCountProducts, countItems, setCartI
                   <td colSpan="2" >Total:</td>
                   <td>${total}</td>
                   <td>
-                    <button className="btn btn-dark" onClick={handlePayClick}>Ir a pagar</button>
+                    <button className="btn btn-dark" data-bs-dismiss="modal" aria-label="Close" onClick={handlePayClick}>Ir a pagar</button>
                   </td>
                 </tr>
               </tbody>

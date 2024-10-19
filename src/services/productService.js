@@ -1,6 +1,10 @@
-export const getProductos = async () => {
+const productos = "http://localhost:5000/api/products"
+
+export const getProductos = async (tipo) => {
+    const filtrado = `${productos}?tipoProducto=${tipo}`;
+    console.log(filtrado)
     try {
-        const response = await fetch('http://localhost:5000/api/products');
+        const response = await fetch(filtrado);
         if (!response.ok) {
             throw new Error('Error al obtener los productos');
         }
