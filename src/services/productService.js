@@ -1,4 +1,4 @@
-const productos = "http://localhost:5000/api/products"
+const productos = process.env.API_URL + '/api/products';
 
 export const getProductos = async (tipo) => {
     const filtrado = `${productos}?tipoProducto=${tipo}`;
